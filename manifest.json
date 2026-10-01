@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "david.omagames",
+  "name": "OmaGames",
+  "version": "1.2.0",
+  "author": "davidsmorais",
+  "license": "MIT",
+  "description": "Single bar entry that launches and manages every installed game plugin. Scans installed manifests for Games/Fun categories (plus game/arcade tags and aliases) so new games show up automatically; enable/disable any game's top-bar icon from one place.",
+  "kinds": ["service", "bar-widget", "panel"],
+  "activation": "on-demand",
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml",
+    "panel": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "OmaGames",
+    "description": "Game launcher — one bar icon for every installed game plugin.",
+    "category": "Games",
+    "aliases": ["games", "launcher", "arcade"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "extraIds": "",
+      "hiddenIds": ""
+    },
+    "schema": [
+      {
+        "key": "extraIds",
+        "type": "string",
+        "label": "Always include (IDs)",
+        "description": "Comma-separated plugin IDs to always list, even if they are not detected as games.",
+        "defaultValue": ""
+      },
+      {
+        "key": "hiddenIds",
+        "type": "string",
+        "label": "Never include (IDs)",
+        "description": "Comma-separated plugin IDs to hide from the launcher.",
+        "defaultValue": ""
+      }
+    ]
+  }
+}
