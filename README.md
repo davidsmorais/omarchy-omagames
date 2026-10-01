@@ -11,6 +11,20 @@ in the top bar — click the gamepad, pick a game, play.
 omarchy plugin add https://github.com/davidsmorais/omarchy-omagames --enable
 ```
 
+## Removal
+
+```bash
+omarchy plugin remove david.omagames
+```
+
+Game plugins you hid from the bar with OmaGames stay disabled; re-enable them
+with `omarchy plugin enable <id>`.
+
+## Requirements
+
+- Omarchy Quattro (shell plugins)
+- `python3` (standard library only) for the manifest scanner
+
 ## How it works
 
 The background service scans `~/.config/omarchy/plugins/*/manifest.json` every
